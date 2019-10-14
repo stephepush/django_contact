@@ -1,10 +1,10 @@
-from django.shortcuts import render redirect
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
 # Create your views here.
 
-defemailView(request):
+def emailView(request):
 	if request.method == 'GET':
 		form = ContactForm()
 	else:
@@ -20,5 +20,5 @@ defemailView(request):
 			return redirect('success')
 	return render(request, "email.html", {'form' : form})
 
-	def successView(request):
-		return HttpResponse('Success! Thank you for your message.')
+def successView(request):
+	return HttpResponse('Success! Thank you for your message.')
