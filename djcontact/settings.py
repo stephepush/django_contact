@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sendemail.apps.SendemailConfig',
-    'crispy_forms',
-    'crispy_forms_foundation',
+    # 'crispy_forms',
+    # 'crispy_forms_foundation',
 ]
 
 MIDDLEWARE = [
@@ -122,8 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    
+]
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-CRISPY_TEMPLATE_PACK = 'foundation'
+# CRISPY_TEMPLATE_PACK = 'foundation'
 
-from crispy_forms_foundation.settings import *
+# from crispy_forms_foundation.settings import *
